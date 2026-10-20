@@ -238,13 +238,29 @@ Tests use disposable data and mocked providers. The packager extends the existin
 
 Future work is separate from the current feature set: broader hardware/OS validation, longitudinal evidence-aware insights, user-defined goals, richer contextual recall, optional wearable integrations and professional review reports with explicit evidence limits. No medical or workplace performance claim is made. [Roadmap →](docs/ROADMAP.md)
 
-## License and contributing
-
-**No project license has been selected or approved.** No `LICENSE` file is included, and package metadata is `UNLICENSED`. This is not yet an open-source license grant. Resolve the project's distribution/contribution terms before presenting it as open source. Third-party dependencies keep their own terms; model weights and runtimes are not bundled. See [license status and dependencies](docs/THIRD-PARTY.md) and [contribution guidance](CONTRIBUTING.md).
-
 ## License
 
-Surv-AI is released under the [MIT License](LICENSE).
+Surv-AI is distributed under the
+[Surv-AI Noncommercial License](LICENSE).
+
+**Copyright © 2026 Leule Negatu.**
+
+You are welcome to download, use, study, modify, and share Surv-AI
+for personal, educational, and other noncommercial purposes.
+
+Noncommercial forks and modified versions are permitted, provided
+the original copyright notice, attribution, and license are retained.
+
+**Commercial use, including internal business use, requires prior
+written authorization from the copyright holder.**
+
+See the [LICENSE](LICENSE) file for the complete terms.
+
+### Third-Party Software
+
+Third-party dependencies retain their respective licenses.
+
+See [Third-Party Dependencies](docs/THIRD-PARTY.md).
 
 Copyright © 2026 Leule Negatu.
 
