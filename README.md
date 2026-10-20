@@ -121,27 +121,79 @@ There are **no npm runtime dependencies or frontend build steps**. Python depend
 
 ## Install on Windows
 
-1. Download the release ZIP and extract it to a writable folder. Alternatively clone **this repository**, whose root contains `package.json`, `server.mjs`, `src/` and `dist/`.
-2. Install [Node.js 24.7 or later](https://nodejs.org/en/download). Install [Python 3.10+](https://www.python.org/downloads/windows/) if you want local person detection or PDFs. Reopen PowerShell so the commands are on PATH.
-3. Open PowerShell in the extracted application folder:
+1. Download the release ZIP and extract it to a writable folder. Alternatively, clone **this repository**, whose root contains `package.json`, `server.mjs`, `src/` and `dist/`.
+
+2. Install the required dependencies:
+
+   - **[Node.js 24.7 or later](https://nodejs.org/en/download)** — required to run Surv-AI.
+   - **[Python](https://www.python.org/downloads/windows/)** — optional, but required for local person detection and PDF generation. Python 3.13 is recommended.
+
+   If using the Python Install Manager, install Python 3.13 with:
+
+   ```powershell
+   py install 3.13
+   ```
+
+   Verify the installation:
+
+   ```powershell
+   node --version
+   py -3.13 --version
+   ```
+
+   **Note:** Installing the Python Install Manager does not necessarily install a Python runtime. Close and reopen PowerShell after installing dependencies.
+
+3. Open PowerShell in the extracted application folder and run:
+
+   ```powershell
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\setup.ps1
+   npm.cmd start
+   ```
+
+   **PowerShell compatibility:** Use `npm.cmd start` rather than `npm start` to avoid the `npm.ps1 cannot be loaded because running scripts is disabled` error on Windows. No system-wide execution-policy changes are required.
+
+4. Open **[http://localhost:4173/](http://localhost:4173/)**.
+
+   Choose **Get started**, create your local owner account and follow the onboarding process.
+
+   During onboarding, you can configure your own OpenAI API key directly through the application. API configuration can also be deferred.
+
+   **Note:** AI observations require a configured API key and may incur API usage charges. Local camera preview and person detection do not require OpenAI API credits.
+
+   Stay on the same hostname (`localhost` or `127.0.0.1`) to preserve your browser session.
+
+5. Stop the foreground server with **Ctrl+C**.
+
+   Starting Surv-AI does not automatically enable cameras, context collection, AI monitoring, monthly archives or Windows automatic startup.
+
+### Optional: Local Person Detection and PDF Reports
+
+Surv-AI supports local OpenCV-based person detection and PDF reporting through optional Python dependencies.
+
+To install both, run:
 
 ```powershell
-node --version
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\setup.ps1
-npm start
-```
-
-4. Open **[http://localhost:4173/](http://localhost:4173/)**. Choose **Get started**, create your local owner account and follow onboarding. API setup can be deferred. Stay on the same hostname for your browser sessions.
-5. Stop the foreground server with **Ctrl+C**. Starting the server does not enable a camera, context collection, monthly archives or automatic startup.
-
-Optional person detection and PDF dependencies:
-
-```powershell
-# Explicit network downloads: Python packages and checksum-verified detector models.
+# Downloads Python packages and checksum-verified detector models.
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\setup.ps1 -LocalDetection -Reports
 ```
 
-The setup script installs optional Python packages into this installation's `.local-python`, not a bundled personal environment. Nothing is installed automatically at first launch. No system execution-policy change is required.
+Alternatively, install only the local person detection dependencies:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\setup-local.ps1
+```
+
+The setup script installs optional Python packages into this installation's `.local-python` directory rather than bundling a personal Python environment.
+
+After installation, restart Surv-AI:
+
+```powershell
+npm.cmd start
+```
+
+Local person detection processes camera frames on your computer without using OpenAI API credits. AI interpretation is separate and requires an API key.
+
+**Auto Monitoring is opt-in.** Enabling a camera does not automatically enable AI monitoring.
 
 **API configuration:** create your own API project/key following the [official OpenAI quickstart](https://developers.openai.com/api/docs/quickstart). Save it through the private onboarding form, or edit `.env` created from [.env.example](.env.example). Never put it in `dist/`, browser storage or Git. The stored key is a local server configuration file, **not an encrypted credential vault**; protect the installation folder. Environment configuration takes precedence. API access and billing are separate from installing Surv-AI.
 
