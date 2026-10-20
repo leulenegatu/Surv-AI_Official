@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Surv-AI Private Browser Companion",
+  "version": "1.0.0",
+  "minimum_chrome_version": "120",
+  "description": "Optional active-tab metadata for your paired local Surv-AI installation.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkUiQQu17dEbQdeKog0BUvNpSnEmI0M8USxwjSjF8jPo1HeE/o6HYlN9cA7Qxcvl7Kv45fzMusuHVIMWaIgSSkCL/Tg4ytQ6C0gOOIutqdBoPPobi27DCdye0dHOF4hRUtqpX3+k3B/9XMvfkxHwm32FK5sgUni6M/gi7r4v21elQy15DOM8a1f31U9D81hfjidh5yPvkYrWPe6RZw0ijiOfZ1bIG13fZlKKhjquJfi/spm1vk0BBNxQO5oDEl9jV40QgpUBIob9txNNxnt9aK/0CdFBSs7OX5E/e2KzsIy7TnawWcAtWObu1DZniBRwhnvRRmadpsK2Jey+3ZMKgKQIDAQAB",
+  "permissions": ["tabs", "storage", "alarms"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "incognito": "not_allowed",
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Surv-AI Browser Companion"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; connect-src http://127.0.0.1:* ws://127.0.0.1:*"}
+}
