@@ -1,6 +1,19 @@
 # Development and contributions
 
-License terms remain undecided. Discuss contribution/distribution terms with the owner before submitting code; no contributor license agreement or open-source grant is implied.
+Surv-AI is developed and maintained by **Leule Negatu** and distributed
+under the [Surv-AI Noncommercial License](LICENSE).
+
+Developers are welcome to explore, modify, and contribute to the project.
+
+Noncommercial forks and modifications are permitted, provided the
+original copyright notice, attribution, and license terms are retained.
+
+**Commercial use, including internal business use, requires prior
+written authorization from Leule Negatu.**
+
+Contributions are welcome through GitHub pull requests. Submissions
+are subject to review and do not automatically transfer copyright
+ownership or establish a contributor license agreement.
 
 Use Node.js 24.7+ and work from the repository root. Backend modules live in `src/`; `server.mjs` is the root entry point; `dist/` contains editable frontend source with no build step. Test fixtures use temporary storage and mock providers. Never point tests at a personal `.local-data` directory or reuse a real API key.
 
