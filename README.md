@@ -241,3 +241,13 @@ Future work is separate from the current feature set: broader hardware/OS valida
 ## License and contributing
 
 **No project license has been selected or approved.** No `LICENSE` file is included, and package metadata is `UNLICENSED`. This is not yet an open-source license grant. Resolve the project's distribution/contribution terms before presenting it as open source. Third-party dependencies keep their own terms; model weights and runtimes are not bundled. See [license status and dependencies](docs/THIRD-PARTY.md) and [contribution guidance](CONTRIBUTING.md).
+
+Copyright and usage
+
+Copyright © 2026 Surv-AI contributors. All rights reserved.
+
+Surv-AI is publicly available for portfolio demonstration and evaluation. The source code is not released under an open-source license.
+
+No permission is granted to redistribute, sublicense, commercially exploit, or create derivative works from the source code without prior written authorization from the copyright holder.
+
+Installation and usage permissions are subject to separately published license terms.
